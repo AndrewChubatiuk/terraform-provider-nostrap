@@ -1,0 +1,31 @@
+<% wrap_layout :inner do %>
+  <% content_for :sidebar do %>
+    <div class="docs-sidebar hidden-print affix-top" role="complementary">
+      <ul class="nav docs-sidenav">
+        <li<%= sidebar_current("docs-home") %>>
+          <a href="/docs/providers/index.html">All Providers</a>
+        </li>
+
+        <li<%= sidebar_current("docs-nostrap-index") %>>
+          <a href="/docs/providers/nostrap/index.html">Nomad/Consul Bootstrap Provider</a>
+          <ul class="nav nav-visible">
+            <li<%= sidebar_current("docs-nostrap-guide-getting-started") %>>
+              <a href="/docs/providers/nostrap/guides/getting-started.html">Getting Started</a>
+            </li>
+          </ul>
+        </li>
+
+        <li<%= sidebar_current("docs-nostrap-resource") %>>
+          <a href="#">Resources</a>
+          <ul class="nav nav-visible">
+            <li<%= sidebar_current("docs-nostrap-resource-acl-token") %>>
+              <a href="/docs/providers/nostrap/r/acl_token.html">nostrap_acl_token</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= yield %>
+<% end %>
